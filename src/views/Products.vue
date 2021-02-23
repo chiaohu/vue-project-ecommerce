@@ -1,6 +1,6 @@
 <template>
   <div>
-    <loading v-model:active="isLoading"></loading>  <!-- loading效果 -->
+    <loading :active="isLoading"></loading>  <!-- loading效果 -->
     <div class="text-right">
       <button class="btn btn-success mt-4" @click="openModal(true)">  <!-- 點擊建立新增產品的Modal -->
         建立新的產品
