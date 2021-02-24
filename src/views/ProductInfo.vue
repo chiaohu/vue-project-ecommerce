@@ -12,13 +12,14 @@
           ></div>
         </div>
         <div class="col-md-6 col-12 col-lg-4 mt-3">
-          <span class="badge rounded-pill badge-success float-left mr-4">
-            {{ product.category }}</span>
+          <div class="badge rounded-pill badge-success mr-4 mb-2">
+            {{ product.category }}
+          </div>
           <h1 class="h2 font-weight-bold text-danger">
             {{ product.title }}
           </h1>
-          <span class="badge bg-danger text-light mb-3">HOT全館消費滿500免運費</span>
-          <span class="badge bg-danger text-light mb-3">優惠期間來店自取買大送大</span>
+          <span class="badge bg-danger text-light mb-1 mr-3">HOT全館消費滿500免運費</span>
+          <span class="badge bg-danger text-light mb-1">優惠期間來店自取買大送大</span>
           <div class="d-flex align-items-baseline">
             <del class="h6 mr-auto" v-if="product.price"
               >原價 {{ product.origin_price }} 元</del>
@@ -162,7 +163,7 @@
               :key="item.id"
               v-show="item.category == product.category && item.id != product.id"
             >
-              <div class="card border-0 shadow-sm mb-3 mt-3">
+              <div class="card border-0 shadow-sm mb-3 mt-3 maybeLike">
                   <div
                     class="productImg"
                     style="
@@ -329,5 +330,8 @@ export default {
   .precautions {
     padding-bottom: 130px;
   }
+}
+.maybeLike:hover{
+  transform: scale(1.05);
 }
 </style>

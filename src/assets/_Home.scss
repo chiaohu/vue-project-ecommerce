@@ -149,9 +149,13 @@
 }
 .ad .ad-close:hover {
   background: red;
+  cursor: pointer;
 }
 .adBanner{
     position: absolute;
     top: 0px;
     z-index: 1;
+}
+.fa-times{
+  
 }
