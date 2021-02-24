@@ -221,7 +221,6 @@ export default {
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`
       this.$http.get(url).then((response) => {
         vm.cart = response.data.data
-        console.log(vm.cart)
       })
     },
     removeCartItem (id) {
