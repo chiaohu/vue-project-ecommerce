@@ -113,7 +113,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in orders" :key="item.id"> <!-- v-if="item.id" -->
+          <tr v-for="item in orders" :key="item.id">
             <td>{{ item.create_at }}</td>
             <!-- eslint-disable-next-line -->
             <td>{{ item.create_at | timestamptrans }}</td>
@@ -235,7 +235,12 @@ import Pagination from '@/components/Pagination'
 export default {
   data () {
     return {
-      orders: {},
+      orders: {
+        user: {
+          name: '',
+          email: ''
+        }
+      },
       tempOrder: {},
       pagination: {},
       order: 'uncompleted'
@@ -250,6 +255,7 @@ export default {
       const vm = this
       this.$http.get(api).then((response) => {
         vm.orders = response.data.orders
+        console.log(response.data)
         vm.pagination = response.data.pagination
       })
     }

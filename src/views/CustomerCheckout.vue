@@ -1,8 +1,9 @@
 <template>
   <div>
     <HomeNavbar />
+    <Alert></Alert>
     <div class="my-5 row justify-content-center">
-      <form class="col-md-6" @submit.prevent="payOrder">
+      <form class="col-md-6" @submit.prevent="payOrder()">
         <table class="table">
           <thead>
             <th>品名</th>
@@ -54,7 +55,7 @@
           </tbody>
         </table>
         <div class="text-right" v-if="!order.is_paid">
-          <button class="btn btn-danger">確認付款去</button>
+          <button class="btn btn-danger">確認付款</button>
         </div>
       </form>
     </div>
@@ -65,6 +66,7 @@
 <script>
 import HomeNavbar from '@/components/HomeNavbar'
 import HomeFooter from '@/components/HomeFooter'
+import Alert from '@/components/AlertMessage'
 
 export default {
   data () {
@@ -88,14 +90,18 @@ export default {
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/pay/${vm.orderId}`
       this.$http.post(url).then((response) => {
         if (response.data.success) {
+          this.$bus.$emit('message:push', '付款完成', 'success')
           vm.getOrder()
+        } else {
+          this.$bus.$emit('message:push', '付款失敗，請重新操作', 'danger')
         }
       })
     }
   },
   components: {
     HomeNavbar,
-    HomeFooter
+    HomeFooter,
+    Alert
   },
   created () {
     this.orderId = this.$route.params.orderId

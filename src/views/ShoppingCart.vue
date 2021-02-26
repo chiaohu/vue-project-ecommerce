@@ -197,7 +197,6 @@
 import HomeNavbar from '@/components/HomeNavbar'
 import HomeFooter from '@/components/HomeFooter'
 import Alert from '@/components/AlertMessage'
-
 export default {
   data () {
     return {
@@ -255,19 +254,15 @@ export default {
       const vm = this
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/order`
       const order = vm.form
-      // vm.isLoading = true;
-      this.$validator.validate().then((result) => {
-        if (result) {
-          this.$http.post(url, { data: order }).then((response) => {
-            console.log('訂單已建立', response.data)
-            if (response.data.success) {
-              vm.$router.push(`/customer_checkout/${response.data.orderId}`)
-            }
-            // vm.getCart();
-            vm.isLoading = false
-          })
+      vm.isLoading = true
+      this.$http.post(url, { data: order }).then((response) => {
+        // eslint-disable-next-line
+        if (response.data.success) {
+          this.$bus.$emit('message:push', '建立訂單', 'success')
+          vm.isLoading = false
+          vm.$router.push(`/customer_checkout/${response.data.orderId}`)
         } else {
-          this.$bus.$emit('message:push', '欄位不完整', 'danger')
+          this.$bus.$emit('message:push', '建立訂單失敗，請重新確認', 'danger')
         }
       })
     }
