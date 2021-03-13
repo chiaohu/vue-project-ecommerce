@@ -1,15 +1,14 @@
 <script>
 /* Line 為引入的圖表種類（可以參考官方文件) */
-import {
-  Line, mixins
-} from 'vue-chartjs'
+import { Line, mixins } from 'vue-chartjs'
 const { reactiveProp } = mixins
 export default {
   extends: Line,
   mixins: [reactiveProp],
   data () {
     return {
-      options: { /* 圖表選項，各類圖表的 options 可能不盡相圖，可參照官方文件 */
+      options: {
+        /* 圖表選項，各類圖表的 options 可能不盡相圖，可參照官方文件 */
         responsive: true,
         maintainAspectRatio: false,
         scales: {
@@ -23,11 +22,13 @@ export default {
               }
             }
           ],
-          xAxes: [{
-            gridLines: {
-              display: true
+          xAxes: [
+            {
+              gridLines: {
+                display: true
+              }
             }
-          }]
+          ]
         }
       }
     }

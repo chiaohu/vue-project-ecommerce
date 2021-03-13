@@ -1,0 +1,112 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.header-carousel-product{
+  height: 350px;
+}
+.carousel-product1{
+  background-image: url('https://images.unsplash.com/photo-1488117382278-329ccc22eecb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1024&q=80');
+}
+.carousel-product2{
+  background-image: url('https://images.unsplash.com/photo-1576867757603-05b134ebc379?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
+}
+
+.menu{
+    background-color: #dc3535;
+    color: #fff;
+    width: 100%;
+    text-decoration: none;
+    font-size: 22px;
+    line-height: 50px;
+    display: block;
+    border: 3px solid #d2f3eb;
+    border-radius: 10px;
+    &:hover {
+      text-decoration: none;
+      cursor: pointer;
+      color: black;
+    }
+    &:focus {
+      background-color: black;
+      color: #dc3535;
+    }
+}
+.products-bg{
+  background-color: #fefbf4;
+}
+.title{
+    font-size: 18px;
+}
+.badge{
+    font-size: 16px;
+}
+.productPrice{
+    font-size: 22px;
+}
+.shoppingCar{
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+}
+.unitbg{
+    position: absolute;
+    right: -7px;
+    top: -10px;
+    background: red;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+.cartunit{
+    position: absolute;
+    right: 8px;
+    top: 3px;
+    font-size: 28px;
+}
+.card:hover{
+  cursor: pointer;
+}
+.productImg:hover{
+    opacity: 0.8;
+}

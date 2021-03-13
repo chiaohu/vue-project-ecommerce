@@ -4,44 +4,47 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
-  { // 避免用戶進入不存在的頁面
-    path: '*',
-    redirect: '/home'
-  },
   {
-    name: 'Home',
-    path: '/home',
-    component: () => import('@/views/Home.vue')
-  },
-  {
-    name: 'customer_order',
-    path: '/CustomerOrder',
-    component: () => import('@/views/CustomerOrder.vue')
-  },
-  {
-    name: 'productInfo',
-    path: '/CustomerOrder/:productId', // 動態路由
-    component: () => import('@/views/ProductInfo.vue')
-  },
-  {
-    name: 'ShoppingCart', // 客人購物車畫面
-    path: '/ShoppingCart',
-    component: () => import('@/views/ShoppingCart.vue')
-  },
-  {
-    name: 'CustomerCoupon',
-    path: '/customercoupon',
-    component: () => import('@/views/CustomerCoupon.vue')
-  },
-  {
-    name: 'CustomerCheckout', // 客人結帳畫面
-    path: '/customer_checkout/:orderId',
-    component: () => import('@/views/CustomerCheckout.vue')
-  },
-  {
-    name: 'login',
-    path: '/login',
-    component: () => import('@/views/login.vue')
+    name: 'Layout',
+    path: '/',
+    component: () => import('@/views/frontend/Layout.vue'),
+    children: [
+      {
+        name: 'Home',
+        path: '/',
+        component: () => import('@/views/frontend/Home.vue')
+      },
+      {
+        name: 'Customer_order',
+        path: '/CustomerOrder',
+        component: () => import('@/views/frontend/CustomerOrder.vue')
+      },
+      {
+        name: 'ProductInfo',
+        path: '/CustomerOrder/:productId',
+        component: () => import('@/views/frontend/ProductInfo.vue')
+      },
+      {
+        name: 'ShoppingCart',
+        path: '/ShoppingCart',
+        component: () => import('@/views/frontend/ShoppingCart.vue')
+      },
+      {
+        name: 'CustomerCoupon',
+        path: '/customercoupon',
+        component: () => import('@/views/frontend/CustomerCoupon.vue')
+      },
+      {
+        name: 'CustomerCheckout',
+        path: '/customer_checkout/:orderId',
+        component: () => import('@/views/frontend/CustomerCheckout.vue')
+      },
+      {
+        name: 'Login',
+        path: '/login',
+        component: () => import('@/views/backend/Login.vue')
+      }
+    ]
   },
   {
     name: 'Dashboard',
@@ -49,30 +52,34 @@ const routes = [
     component: () => import('@/components/Dashboard.vue'),
     children: [
       {
-        name: 'products',
+        name: 'Products',
         path: 'products',
-        component: () => import('@/views/Products.vue'),
-        meta: { requiresAuth: true } // 確認有無登入
+        component: () => import('@/views/backend/Products.vue'),
+        meta: { requiresAuth: true }
       },
       {
         name: 'OrderManagement',
         path: 'ordermanagement',
-        component: () => import('@/views/OrderManagement.vue'),
-        meta: { requiresAuth: true } // 確認有無登入
+        component: () => import('@/views/backend/OrderManagement.vue'),
+        meta: { requiresAuth: true }
       },
       {
         name: 'Coupon',
         path: 'coupon',
-        component: () => import('@/views/Coupon.vue'),
-        meta: { requiresAuth: true } // 確認有無登入
+        component: () => import('@/views/backend/Coupon.vue'),
+        meta: { requiresAuth: true }
       },
       {
         name: 'Turnover',
         path: 'turnover',
-        component: () => import('@/views/Turnover.vue'),
-        meta: { requiresAuth: true } // 確認有無登入
+        component: () => import('@/views/backend/Turnover.vue'),
+        meta: { requiresAuth: true }
       }
     ]
+  },
+  { // 避免用戶進入不存在的頁面
+    path: '*',
+    redirect: '/'
   }
 ]
 

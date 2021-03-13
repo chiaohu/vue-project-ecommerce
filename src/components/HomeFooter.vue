@@ -1,16 +1,26 @@
 <template>
-  <div class="container-fluid">
-    <footer class="footer fixed-bottom">
-      <div class="row bg-info d-flex">
-        <div class="col-sm-6 d-flex mt-3">
-          <p class="ml-4 footer-logo">Arrivederci</p>
-        </div>
-        <div class="col-sm-6 d-flex flex-column text-center mt-3">
-          <p>快加入我們的粉絲團獲取最新消息吧</p>
-          <div class="social mt-1 mb-1">
-            <a href="#"><img src="../../img/logo/fb-logo.png" /></a>
-            <a href="#"><img src="../../img/logo/google-logo.png" /></a>
-            <a href="#"><img src="../../img/logo/twitter-logo.png" /></a>
+  <div>
+    <footer class="footer Sticky Footer">
+      <div class="bg-main">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 mt-2">
+              <p class="ml-4 footer-logo text-dark">Arrivederci</p>
+            </div>
+            <div class="col-sm-6 d-flex flex-column text-center mt-2">
+              <p>快加入我們的粉絲團獲取最新消息吧</p>
+              <div class="social mb-1 mt-2">
+                <a href="#" class="mr-2"
+                  ><img src="../assets/img/logo/fb-logo.png" alt="fb-logo"
+                /></a>
+                <a href="#" class="mr-2"
+                  ><img src="../assets/img/logo/google-logo.png" alt="google-logo"
+                /></a>
+                <a href="#"
+                  ><img src="../assets/img/logo/twitter-logo.png" alt="twitter-logo"
+                /></a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

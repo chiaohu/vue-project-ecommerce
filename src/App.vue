@@ -11,12 +11,12 @@ export default {
 </script>
 
 <style lang="scss">
-#app{
+#app {
   min-height: 100%;
   position: relative;
 }
 body {
   height: 100%;
 }
-@import "./assets/all";
+@import "./assets/scss/all";
 </style>

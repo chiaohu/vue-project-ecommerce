@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Navbar/>
-    <Alert></Alert>
-    <div class="container-fluid">
+    <Navbar />
+    <AlertMessage />
+    <div class="container">
       <div class="row">
         <sidebar></sidebar>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
@@ -16,15 +16,18 @@
 <script>
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
-import Alert from './AlertMessage'
+import AlertMessage from './AlertMessage'
 export default {
   components: {
     Navbar,
     Sidebar,
-    Alert
+    AlertMessage
   },
   created () {
-    const token = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/, '$1')
+    const token = document.cookie.replace(
+      /(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/,
+      '$1'
+    )
     this.$http.defaults.headers.common.Authorization = `${token}`
   }
 }
