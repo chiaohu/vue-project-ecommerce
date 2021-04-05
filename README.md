@@ -4,7 +4,7 @@
 ## DEMO
 [Arrivederci](https://chiaohu.github.io/vue-project-ecommerce/dist/#/)
 
-### 簡介
+## 簡介
 > 平台功能
 * 前台:
 * 商品加入購物車
@@ -19,7 +19,7 @@
 *新增/修改/刪除 優惠券
 *業績圖表系統 
 
-### skills
+## skills
 *Vue cli (axios, router)
 *HTML/CSS
 *bootstrap/SCSS
