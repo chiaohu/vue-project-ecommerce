@@ -246,7 +246,7 @@ export default {
         this.tempCoupon = {}
         this.isNew = true
       } else {
-        this.tempCoupon = Object.assign(...item)
+        this.tempCoupon = Object.assign({}, item)
         const dateAndTime = new Date(this.tempCoupon.due_date * 1000)
           .toISOString()
           .split('T')

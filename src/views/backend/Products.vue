@@ -324,7 +324,7 @@ export default {
         this.tempProduct = {}
         this.isNew = true
       } else {
-        this.tempProduct = Object.assign(...item) // 避免傳參考特性
+        this.tempProduct = Object.assign({}, item) // 避免傳參考特性
         this.isNew = false
       }
       if (del) {
