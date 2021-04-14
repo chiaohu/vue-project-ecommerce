@@ -7,6 +7,7 @@
 ## 簡介
 平台功能
 * 前台:
+* 電商首頁 (Banner 幻燈片 地圖資訊)
 * 商品加入購物車
 * 折價券優惠
 * 結帳功能
@@ -20,6 +21,9 @@
 * 業績圖表系統 
 
 ## skills
-* Vue cli (axios, router)
+* Vue cli 
+* Vue相關套件 (axios, router)
+* 串接後端API
 * HTML/CSS
-* bootstrap/SCSS
+* bootstrap/SCSS (製作RWD與客製化樣式)
+* ESLint (管理程式碼品質)
